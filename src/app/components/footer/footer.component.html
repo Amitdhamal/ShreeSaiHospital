@@ -1,0 +1,64 @@
+<footer class="site-footer">
+  <div class="footer-devotional">
+    <div class="container">
+      <p class="footer-mantra">॥ सबका मालिक एक ॥</p>
+      <p class="footer-subtitle">Serving Humanity in the Name of Shri Sai Baba</p>
+    </div>
+  </div>
+
+  <div class="footer-main">
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-logo">
+          <span class="f-diya">🪔</span>
+          <div>
+            <p class="f-name">Shirdi Devasthan Hospital</p>
+            <p class="f-trust">Sai Baba Sansthan Trust</p>
+          </div>
+        </div>
+        <p class="footer-about">
+          Established under the blessing of Shri Sai Baba, we provide compassionate, 
+          affordable healthcare to pilgrims, devotees and the community of Shirdi.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/">🏠 Home</a></li>
+          <li><a routerLink="/departments">🏥 Departments</a></li>
+          <li><a routerLink="/doctors">👨‍⚕️ Our Doctors</a></li>
+          <li><a routerLink="/contact">📞 Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-contact-list">
+          <li>{{contactInfo.address}}</li>
+          <li>📞 {{contactInfo.phone[0]}}</li>
+          <li>🚨 Emergency: {{contactInfo.emergencyNumber}}</li>
+          <li>✉️ {{contactInfo.email}}</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">OPD Timings</h4>
+        <ul class="footer-timings">
+          <li><span>{{contactInfo.timings[0].day}}</span><span>{{contactInfo.timings[0].hours}}</span></li>
+          <li><span>{{contactInfo.timings[1].day}}</span><span>{{contactInfo.timings[1].hours}}</span></li>
+          <li class="emergency-timing"><span>{{contactInfo.timings[2].day}}</span><span>{{contactInfo.timings[2].hours}}</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© {{ currentYear }} Shirdi Devasthan Hospital. All Rights Reserved.</p>
+      <p class="footer-blessing">🙏 श्री साई बाबा आपको आरोग्य और सुख दें 🙏</p>
+    </div>
+  </div>
+</footer>

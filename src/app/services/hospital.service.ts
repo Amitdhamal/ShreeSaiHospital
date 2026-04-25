@@ -167,10 +167,10 @@ export class HospitalService {
   ];
 
   private contactInfo: ContactInfo = {
-    address: 'Shirdi Devasthan Hospital, Near Sai Baba Mandir, Shirdi – 423109, Ahmednagar District, Maharashtra',
+    address: 'Shirdi Devasthan Hospital, Near Sai Baba Mandir, Shirdi – 423109, Ahmednagar District, Maharashtra, India',
     phone: ['+91 2423 258 500', '+91 2423 258 501'],
     email: 'hospital@shirdidevastan.org',
-    emergencyNumber: '+91 2423 258 999',
+    emergencyNumber: '+91 2423 258 888',
     timings: [
       { day: 'Monday – Saturday', hours: '8:00 AM – 8:00 PM' },
       { day: 'Sunday', hours: '9:00 AM – 1:00 PM' },
