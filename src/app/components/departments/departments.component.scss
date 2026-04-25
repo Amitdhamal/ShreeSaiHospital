@@ -1,0 +1,71 @@
+ .page-hero {
+      background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
+      padding: 60px 0 48px;
+    }
+    .breadcrumb { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .page-title {
+      font-family: 'Tiro Devanagari Sanskrit', Georgia, serif;
+      font-size: 2.4rem; color: #fff; margin: 0 0 12px;
+    }
+    .page-subtitle { color: #c5a882; font-size: 1rem; margin: 0; }
+
+    .dept-page-section { padding: 60px 0; background: var(--cream-bg); }
+
+    .dept-full-grid { display: flex; flex-direction: column; gap: 32px; }
+
+    .dept-full-card {
+      background: #fff; border-radius: 20px; padding: 32px;
+      border: 1px solid var(--saffron-light);
+      border-left: 6px solid var(--dept-color, var(--saffron));
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .dept-card-header { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; }
+    .dept-big-icon {
+      font-size: 2.8rem;
+      width: 72px; height: 72px; flex-shrink: 0;
+      background: var(--cream-bg); border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .dept-full-name { font-size: 1.4rem; font-weight: 700; color: var(--maroon); margin: 0 0 8px; }
+    .dept-full-desc { font-size: 0.88rem; color: #7a5c4a; line-height: 1.7; margin: 0; }
+
+    .services-heading {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--saffron-dark); font-weight: 700; margin: 0 0 12px;
+    }
+
+    .services-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .service-chip {
+      background: var(--saffron-light); color: var(--maroon);
+      padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+    }
+
+    .dept-doctor-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .dept-doctor-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--cream-bg); border-radius: 12px; padding: 14px;
+    }
+
+    .doc-mini-avatar {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--saffron), var(--maroon));
+      color: #fff; font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .doc-mini-name { font-weight: 700; color: var(--maroon); font-size: 0.85rem; margin: 0 0 2px; }
+    .doc-mini-desg { color: var(--saffron-dark); font-size: 0.75rem; margin: 0 0 2px; }
+    .doc-mini-avail { color: #888; font-size: 0.72rem; margin: 0; }
+
+    @media (max-width: 768px) {
+      .dept-card-header { flex-direction: column; }
+      .dept-doctor-list { grid-template-columns: 1fr; }
+      .page-title { font-size: 1.8rem; }
+    }
+    @media (max-width: 480px) {
+      .dept-doctor-list { grid-template-columns: 1fr; }
+    }

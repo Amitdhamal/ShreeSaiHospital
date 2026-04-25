@@ -1,0 +1,76 @@
+<!-- header.component.html -->
+<header class="site-header" [class.scrolled]="isScrolled">
+  <!-- Top Bar -->
+  <!-- <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="om-symbol">ॐ</span>
+        <span class="tagline">श्री साई बाबा की कृपा से सेवा करते हैं</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+912423258999" class="emergency-link">
+          🚨 Emergency: +91 2423 258 999
+        </a>
+        <span class="time-badge">⏰ {{ currentTime }}</span>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Main Nav -->
+  <div class="main-nav">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a routerLink="/" class="logo-wrap" (click)="closeMenu()">
+        <div class="logo-emblem">
+          <div class="emblem-circle">
+            <span class="emblem-diya">🪔</span>
+          </div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Shirdi Devasthan</span>
+          <span class="logo-sub">Hospital & Research Centre</span>
+          <span class="logo-trust">Sai Baba Sansthan Trust</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav">
+        <a *ngFor="let link of navLinks"
+           [routerLink]="link.path"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+           class="nav-link">
+          <span class="nav-icon">{{ link.icon }}</span>
+          {{ link.label }}
+        </a>
+        <a routerLink="/contact" class="btn-appointment">
+          📅 Book Appointment
+        </a>
+      </nav>
+
+      <!-- Hamburger -->
+      <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <nav>
+      <a *ngFor="let link of navLinks"
+         [routerLink]="link.path"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+         class="mobile-nav-link"
+         (click)="closeMenu()">
+        <span>{{ link.icon }}</span> {{ link.label }}
+      </a>
+      <a routerLink="/contact" class="btn-appointment mobile-appt" (click)="closeMenu()">
+        📅 Book Appointment
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="header-spacer"></div>

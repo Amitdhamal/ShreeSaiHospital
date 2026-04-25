@@ -1,0 +1,80 @@
+/* styles.css - Global Devotional Theme */
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+/* ===== DEVOTIONAL COLOR PALETTE ===== */
+:root {
+  --maroon:        #7B2D3E;
+  --maroon-dark:   #4A1220;
+  --saffron:       #E67E22;
+  --saffron-dark:  #CA6F1E;
+  --saffron-light: #FDF3E7;
+  --gold:          #F1C40F;
+  --gold-light:    #FEF9E7;
+  --cream-bg:      #FDF8F0;
+  --text-dark:     #2C1810;
+  --text-medium:   #7a5c4a;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: var(--text-dark);
+  background: var(--cream-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  line-height: 1.3;
+}
+
+a { transition: color 0.2s; }
+
+img { max-width: 100%; }
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream-bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--saffron), var(--maroon));
+  border-radius: 4px;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--saffron-light);
+  color: var(--maroon);
+}
+
+/* ===== UTILITY ===== */
+.text-center { text-align: center; }
+.mt-32 { margin-top: 32px; }
+.mb-32 { margin-bottom: 32px; }
+
+/* ===== PAGE TRANSITION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+router-outlet + * {
+  animation: fadeIn 0.4s ease forwards;
+}

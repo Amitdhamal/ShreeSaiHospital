@@ -1,0 +1,135 @@
+     .page-hero {
+      background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
+      padding: 60px 0 48px;
+    }
+    .breadcrumb { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .page-title { font-family: 'Tiro Devanagari Sanskrit', Georgia, serif; font-size: 2.4rem; color: #fff; margin: 0 0 12px; }
+    .page-subtitle { color: #c5a882; font-size: 1rem; margin: 0; }
+
+    .contact-section { padding: 60px 0; background: var(--cream-bg); }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px;
+    }
+
+    .info-card {
+      background: #fff; border-radius: 16px; padding: 22px;
+      border: 1px solid var(--saffron-light);
+      margin-bottom: 20px;
+    }
+
+    .info-card-title {
+      font-weight: 700; color: var(--maroon); font-size: 0.9rem;
+      margin: 0 0 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--saffron-light);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    .info-card p { color: #7a5c4a; font-size: 0.88rem; margin: 4px 0; line-height: 1.6; }
+    .info-card a { color: var(--saffron-dark); text-decoration: none; font-weight: 600; }
+    .info-card a:hover { color: var(--maroon); }
+
+    .emergency-card {
+      border: 2px solid #dc3545;
+      background: #fff5f5;
+    }
+    .emergency-num a { font-size: 1.3rem; color: #dc3545 !important; font-weight: 800; }
+    .emergency-note { color: #dc3545 !important; font-style: italic; font-size: 0.78rem !important; }
+
+    .timing-table { width: 100%; border-collapse: collapse; }
+    .timing-day { padding: 7px 0; color: #7a5c4a; font-size: 0.83rem; }
+    .timing-hours { padding: 7px 0; color: var(--maroon); font-weight: 700; font-size: 0.83rem; text-align: right; }
+    .timing-table tr { border-bottom: 1px solid var(--saffron-light); }
+    .timing-table tr:last-child { border-bottom: none; }
+
+    /* Appointment Form */
+    .appt-form-card {
+      background: #fff; border-radius: 20px; padding: 36px;
+      border: 1px solid var(--saffron-light);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+
+    .appt-form-header { text-align: center; margin-bottom: 32px; }
+    .appt-icon { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+    .appt-title {
+      font-family: 'Tiro Devanagari Sanskrit', Georgia, serif;
+      font-size: 1.6rem; color: var(--maroon); margin: 0 0 8px;
+    }
+    .appt-subtitle { color: #888; font-size: 0.88rem; margin: 0; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.8rem; font-weight: 700;
+      color: var(--maroon); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; border: 1.5px solid var(--saffron-light);
+      border-radius: 10px; padding: 11px 14px; font-size: 0.9rem;
+      color: var(--maroon); background: var(--cream-bg);
+      transition: border-color 0.2s; outline: none; box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--saffron);
+    }
+
+    .form-devotional {
+      background: var(--saffron-light); border-radius: 12px; padding: 14px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; color: var(--maroon); font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .btn-submit {
+      width: 100%; padding: 15px;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron-dark));
+      color: #fff; font-weight: 700; font-size: 1rem;
+      border: none; border-radius: 25px; cursor: pointer;
+      letter-spacing: 0.03em;
+      box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+      transition: all 0.3s;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230, 126, 34, 0.55); }
+
+    .form-success { text-align: center; padding: 40px 0; }
+    .success-icon { font-size: 3rem; margin-bottom: 16px; }
+    .form-success h3 { color: var(--maroon); margin: 0 0 10px; }
+    .form-success p { color: #7a5c4a; margin: 0 0 24px; }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron-dark));
+      color: #fff; font-weight: 700; font-size: 0.95rem;
+      padding: 12px 24px; border-radius: 30px;
+      text-decoration: none; border: none; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(230, 126, 34, 0.5);
+      transition: all 0.3s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .mt-12 { margin-top: 12px; }
+
+    /* Map */
+    .map-placeholder {
+      background: var(--maroon-dark); padding: 60px 0;
+    }
+    .map-box {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 20px; padding: 60px 40px;
+      text-align: center;
+    }
+    .map-pin-anim { font-size: 3rem; animation: mapBounce 1.5s ease-in-out infinite; display: block; margin-bottom: 16px; }
+    @keyframes mapBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .map-label { color: var(--gold); font-size: 1.3rem; font-weight: 700; margin: 0 0 8px; }
+    .map-addr { color: #c5a882; font-size: 0.88rem; margin: 0 0 20px; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .form-row { grid-template-columns: 1fr; }
+      .appt-form-card { padding: 24px; }
+      .page-title { font-size: 1.8rem; }
+    }

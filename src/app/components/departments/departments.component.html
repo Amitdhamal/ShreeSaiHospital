@@ -1,0 +1,44 @@
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a routerLink="/">Home</a> / Departments</div>
+    <h1 class="page-title">Our Medical Departments</h1>
+    <p class="page-subtitle">Comprehensive healthcare across all major specialities</p>
+  </div>
+</div>
+
+<section class="dept-page-section">
+  <div class="container">
+    <div class="dept-full-grid">
+      <div class="dept-full-card" *ngFor="let dept of departments" [style.--dept-color]="dept.color">
+        <div class="dept-card-header">
+          <div class="dept-big-icon">{{ dept.icon }}</div>
+          <div>
+            <h2 class="dept-full-name">{{ dept.name }}</h2>
+            <p class="dept-full-desc">{{ dept.description }}</p>
+          </div>
+        </div>
+
+        <div class="dept-services">
+          <h4 class="services-heading">Services Offered</h4>
+          <div class="services-chips">
+            <span class="service-chip" *ngFor="let svc of dept.services">✓ {{ svc }}</span>
+          </div>
+        </div>
+
+        <div class="dept-doctors" *ngIf="getDoctorsForDept(dept.id).length > 0">
+          <h4 class="services-heading">Doctors in this Department</h4>
+          <div class="dept-doctor-list">
+            <div class="dept-doctor-item" *ngFor="let doc of getDoctorsForDept(dept.id)">
+              <div class="doc-mini-avatar">{{ doc.imageInitials }}</div>
+              <div>
+                <p class="doc-mini-name">{{ doc.name }}</p>
+                <p class="doc-mini-desg">{{ doc.designation }}</p>
+                <p class="doc-mini-avail">🕐 {{ doc.availability }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

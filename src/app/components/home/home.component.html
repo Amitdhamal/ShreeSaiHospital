@@ -1,0 +1,166 @@
+<!-- home.component.html -->
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-diya-left">🪔</div>
+  <div class="hero-diya-right">🪔</div>
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span class="om-badge">ॐ</span>
+      श्री साई बाबा सेवा संस्थान
+    </div>
+    <h1 class="hero-title">
+      Shirdi Devasthan<br>
+      <span class="hero-title-accent">Hospital & Research Centre</span>
+    </h1>
+    <p class="hero-text">
+      Healing through faith, science and compassion since 1970.<br>
+      Serving lakhs of pilgrims and patients with the blessings of Shri Sai Baba.
+    </p>
+    <div class="hero-cta-group">
+      <a routerLink="/departments" class="btn-primary">🏥 Our Departments</a>
+      <a routerLink="/doctors" class="btn-secondary">👨‍⚕️ Meet Our Doctors</a>
+    </div>
+    <div class="hero-emergency-bar">
+      <span>🚨</span>
+      <strong>24/7 Emergency:</strong>
+      <a href="tel:+912423258999">+91 2423 258 999</a>
+    </div>
+  </div>
+  <!-- Mandala decoration -->
+  <div class="mandala-overlay">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <circle cx="100" cy="100" r="90" stroke="rgba(255,153,0,0.15)" stroke-width="2"/>
+      <circle cx="100" cy="100" r="70" stroke="rgba(255,153,0,0.12)" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="50" stroke="rgba(255,153,0,0.10)" stroke-width="1"/>
+      <polygon points="100,15 185,60 185,140 100,185 15,140 15,60" stroke="rgba(255,215,0,0.12)" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-card" *ngFor="let stat of stats">
+      <div class="stat-icon">{{ stat.icon }}</div>
+      <div class="stat-value">{{ stat.value }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENTS TICKER -->
+<div class="ticker-bar" *ngIf="announcements.length > 0">
+  <div class="ticker-label">📢 Latest:</div>
+  <div class="ticker-track">
+    <div class="ticker-items">
+      <span class="ticker-item" *ngFor="let ann of announcements">
+        <span class="ticker-badge" [ngClass]="ann.type">{{ getAnnouncementBadge(ann.type) }}</span>
+        {{ ann.title }}
+        <span class="ticker-sep">•</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- DEPARTMENTS -->
+<section class="section departments-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">🏥 Medical Specialities</div>
+      <h2 class="section-title">Our Departments</h2>
+      <p class="section-desc">World-class medical care across a wide range of specialities under one roof</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card" *ngFor="let dept of departments" [style.--dept-color]="dept.color">
+        <div class="dept-icon-wrap">
+          <span class="dept-icon">{{ dept.icon }}</span>
+        </div>
+        <h3 class="dept-name">{{ dept.name }}</h3>
+        <p class="dept-desc">{{ dept.description }}</p>
+        <a routerLink="/departments" class="dept-link">Learn More →</a>
+      </div>
+    </div>
+    <div class="text-center mt-32">
+      <a routerLink="/departments" class="btn-primary">View All Departments</a>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section facilities-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">⚕️ Infrastructure</div>
+      <h2 class="section-title">World-Class Facilities</h2>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card" *ngFor="let fac of facilities">
+        <div class="facility-icon">{{ fac.icon }}</div>
+        <h4 class="facility-name">{{ fac.name }}</h4>
+        <p class="facility-desc">{{ fac.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DOCTORS -->
+<section class="section doctors-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">👨‍⚕️ Our Team</div>
+      <h2 class="section-title">Featured Doctors</h2>
+      <p class="section-desc">Experienced specialists dedicated to your health and wellbeing</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card" *ngFor="let doc of featuredDoctors">
+        <div class="doctor-avatar">{{ doc.imageInitials }}</div>
+        <div class="doctor-info">
+          <h4 class="doctor-name">{{ doc.name }}</h4>
+          <p class="doctor-designation">{{ doc.designation }}</p>
+          <p class="doctor-dept">{{ doc.department }}</p>
+          <p class="doctor-qual">{{ doc.qualification }}</p>
+          <div class="doctor-meta">
+            <span>🏆 {{ doc.experience }} yrs exp</span>
+            <span>🕐 {{ doc.availability }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-32">
+      <a routerLink="/doctors" class="btn-primary">View All Doctors</a>
+    </div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENTS -->
+<section class="section notices-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">📋 Updates</div>
+      <h2 class="section-title">Notices & Announcements</h2>
+    </div>
+    <div class="notices-grid">
+      <div class="notice-card" *ngFor="let ann of announcements" [ngClass]="ann.type">
+        <div class="notice-header">
+          <span class="notice-badge" [ngClass]="ann.type">{{ getAnnouncementBadge(ann.type) }}</span>
+          <span class="notice-date">{{ ann.date }}</span>
+        </div>
+        <h4 class="notice-title">{{ ann.title }}</h4>
+        <p class="notice-desc">{{ ann.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVOTIONAL FOOTER BANNER -->
+<div class="devotional-banner">
+  <div class="container banner-inner">
+    <div class="banner-text">
+      <p class="banner-hindi">श्रद्धा और सबुरी</p>
+      <p class="banner-english">"Faith and Patience" — the guiding light of Sai Baba</p>
+    </div>
+    <a routerLink="/contact" class="btn-primary banner-btn">📅 Book an Appointment</a>
+  </div>
+</div>

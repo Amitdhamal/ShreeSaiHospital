@@ -1,0 +1,52 @@
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a routerLink="/">Home</a> / Our Doctors</div>
+    <h1 class="page-title">Our Medical Team</h1>
+    <p class="page-subtitle">Experienced specialists with compassion and expertise</p>
+  </div>
+</div>
+
+<section class="doctors-page-section">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search doctor by name..." (input)="applyFilter()" class="search-input"/>
+      </div>
+      <div class="dept-filters">
+        <button class="filter-btn" [class.active]="selectedDept === 0" (click)="selectDept(0)">All</button>
+        <button class="filter-btn" *ngFor="let dept of departments"
+          [class.active]="selectedDept === dept.id"
+          (click)="selectDept(dept.id)">
+          {{ dept.icon }} {{ dept.name }}
+        </button>
+      </div>
+    </div>
+
+    <p class="result-count">Showing {{ filteredDoctors.length }} doctor(s)</p>
+
+    <div class="doctors-full-grid">
+      <div class="doctor-full-card" *ngFor="let doc of filteredDoctors">
+        <div class="doctor-full-avatar">{{ doc.imageInitials }}</div>
+        <div class="doctor-full-info">
+          <h3 class="dfc-name">{{ doc.name }}</h3>
+          <p class="dfc-designation">{{ doc.designation }}</p>
+          <div class="dfc-badges">
+            <span class="dfc-dept-badge">{{ doc.department }}</span>
+            <span class="dfc-exp-badge">🏆 {{ doc.experience }} yrs</span>
+          </div>
+          <p class="dfc-qual">🎓 {{ doc.qualification }}</p>
+          <p class="dfc-avail">🕐 {{ doc.availability }}</p>
+          <div class="dfc-langs">
+            <span class="lang-chip" *ngFor="let lang of doc.languages">{{ lang }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-results" *ngIf="filteredDoctors.length === 0">
+      <p>🔍 No doctors found matching your search. Please try a different filter.</p>
+    </div>
+  </div>
+</section>

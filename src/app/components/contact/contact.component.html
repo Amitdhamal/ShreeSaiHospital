@@ -1,0 +1,116 @@
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a routerLink="/">Home</a> / Contact</div>
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-subtitle">We are here for you — always</p>
+  </div>
+</div>
+
+<section class="contact-section" *ngIf="contactInfo">
+  <div class="container contact-grid">
+
+    <!-- Info Side -->
+    <div class="contact-info-side">
+      <div class="info-card">
+        <h3 class="info-card-title">📍 Address</h3>
+        <p>{{ contactInfo.address }}</p>
+      </div>
+
+      <div class="info-card">
+        <h3 class="info-card-title">📞 Phone Numbers</h3>
+        <p *ngFor="let ph of contactInfo.phone"><a [href]="'tel:' + ph">{{ ph }}</a></p>
+      </div>
+
+      <div class="info-card emergency-card">
+        <h3 class="info-card-title">🚨 Emergency</h3>
+        <p class="emergency-num"><a [href]="'tel:' + contactInfo.emergencyNumber">{{ contactInfo.emergencyNumber }}</a></p>
+        <p class="emergency-note">Available 24 hours, 7 days a week</p>
+      </div>
+
+      <div class="info-card">
+        <h3 class="info-card-title">✉️ Email</h3>
+        <p><a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a></p>
+      </div>
+
+      <div class="info-card">
+        <h3 class="info-card-title">🕐 OPD Timings</h3>
+        <table class="timing-table">
+          <tr *ngFor="let t of contactInfo.timings">
+            <td class="timing-day">{{ t.day }}</td>
+            <td class="timing-hours">{{ t.hours }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Appointment Form -->
+    <div class="appointment-side">
+      <div class="appt-form-card">
+        <div class="appt-form-header">
+          <span class="appt-icon">📅</span>
+          <h2 class="appt-title">Book an Appointment</h2>
+          <p class="appt-subtitle">Fill in the details and our team will contact you</p>
+        </div>
+
+        <div class="form-success" *ngIf="submitted">
+          <div class="success-icon">✅</div>
+          <h3>Appointment Request Received!</h3>
+          <p>Our team will call you within 24 hours to confirm your appointment. 🙏 Jai Sai Ram!</p>
+          <button class="btn-primary" (click)="submitted = false; resetForm()">Book Another</button>
+        </div>
+
+        <form *ngIf="!submitted" class="appt-form" (ngSubmit)="submitForm()">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" [(ngModel)]="form.name" name="name" placeholder="Your full name" required/>
+            </div>
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" [(ngModel)]="form.phone" name="phone" placeholder="+91 XXXXXXXXXX" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Department *</label>
+              <select [(ngModel)]="form.department" name="department" required>
+                <option value="">Select Department</option>
+                <option *ngFor="let dept of departments" [value]="dept.name">{{ dept.icon }} {{ dept.name }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" [(ngModel)]="form.date" name="date"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Message / Symptoms</label>
+            <textarea [(ngModel)]="form.message" name="message" rows="4" placeholder="Briefly describe your symptoms or reason for visit"></textarea>
+          </div>
+
+          <div class="form-devotional">
+            <span>🙏</span>
+            <em>Your health is our prayer. Shri Sai Baba will guide your healing.</em>
+          </div>
+
+          <button type="submit" class="btn-submit">📅 Submit Appointment Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="map-placeholder">
+  <div class="container">
+    <div class="map-box">
+      <div class="map-pin-anim">📍</div>
+      <p class="map-label">Shirdi Devasthan Hospital</p>
+      <p class="map-addr">Near Sai Baba Mandir, Shirdi – 423109, Maharashtra</p>
+      <a href="https://maps.google.com/?q=Shirdi+Sai+Baba+Mandir" target="_blank" class="btn-primary mt-12">
+        🗺️ Open in Google Maps
+      </a>
+    </div>
+  </div>
+</div>
