@@ -25,7 +25,7 @@
     <div class="hero-emergency-bar">
       <span>🚨</span>
       <strong>24/7 Emergency:</strong>
-      <a href="tel:+912423258999">+91 2423 258 999</a>
+      <a [attr.href]="'tel:'+ conractInfo.emergencyNumber">{{conractInfo.emergencyNumber}}</a>
     </div>
   </div>
   <!-- Mandala decoration -->

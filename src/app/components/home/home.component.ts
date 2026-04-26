@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   featuredDoctors: Doctor[] = [];
   facilities: Facility[] = [];
   announcements: Announcement[] = [];
+  conractInfo: any = {};
+  emergencyNumber: string = '';
 
   stats = [
     { value: '50+', label: 'Years of Service', icon: '🏥' },
@@ -42,6 +44,13 @@ export class HomeComponent implements OnInit {
 
     this.hospitalService.getAnnouncements().subscribe(data => {
       this.announcements = data;
+    });
+
+    this.hospitalService.getContactInfo().subscribe(data => {
+      this.conractInfo = data;
+      console.log('Contact Info:', this.conractInfo);
+      this.emergencyNumber =  `tel:${this.conractInfo.emergencyNumber}`;
+
     });
   }
 
