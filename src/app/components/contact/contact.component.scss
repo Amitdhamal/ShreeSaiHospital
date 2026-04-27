@@ -2,6 +2,8 @@
       background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
       padding: 60px 0 48px;
     }
+    .btn-submit:disabled{opacity: 0.6;}
+    .text-danger{color:red;margin-top:8px}
     .breadcrumb { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-bottom: 16px; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
     .page-title { font-family: 'Tiro Devanagari Sanskrit', Georgia, serif; font-size: 2.4rem; color: #fff; margin: 0 0 12px; }
@@ -93,7 +95,6 @@
       transition: all 0.3s;
     }
     .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230, 126, 34, 0.55); }
-
     .form-success { text-align: center; padding: 40px 0; }
     .success-icon { font-size: 3rem; margin-bottom: 16px; }
     .form-success h3 { color: var(--maroon); margin: 0 0 10px; }

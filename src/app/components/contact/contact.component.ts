@@ -1,7 +1,7 @@
 // components/contact/contact.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HospitalService } from '../../services/hospital.service';
 import { ContactInfo } from '../../models/hospital.models';
@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule,ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -20,16 +20,17 @@ export class ContactComponent implements OnInit {
   submitted = false;
 
   form = this.formBuilder.group({
-    name: '',
-    phone: '',
-    department: '',
-    date: '',
+    name: ['',Validators.required],
+    phone: ['',Validators.required],
+    department: ['',Validators.required],
+    date: [ '',Validators.required],
     message: ''
   });
 
   constructor(private hospitalService: HospitalService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    console.log('ContactComponent initialized:',this.form);
     this.hospitalService.getContactInfo().subscribe(data => this.contactInfo = data);
     this.hospitalService.getDepartments().subscribe(data => this.departments = data);
   }
